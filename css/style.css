@@ -113,7 +113,6 @@ a:hover, a:focus {
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 .skip a{
-  position: absolute;
   top: -40px;
   left: 0;
   opacity: 0;
@@ -144,7 +143,9 @@ first div in the grid  and place it in the grid. */
 .container > :first-child {
   grid-column: 1 / -1; /* Take up all columns */
   min-height: 500px; /* Minimum height of 500px */
-  background-image: url('images/header.jpg'); /* Replace with your image URL */
+  background-image: url(https://github.com/lorenzoa3/Responsive-Grid/blob/main/images/header.jpg?raw=true); /* Replace with your image URL */
+  background-size: cover; /* Adjust as needed */
+  background-attachment: fixed; /* Parallax effect */
 }
 
 
@@ -207,11 +208,11 @@ text-block {
 @media (min-width: 800px) {
   /* Step 9: Move the navigation and add padding */
   nav {
-    position: fixed;
     top: 30px;
     bottom: 30px;
+    text-align: right;
     right: 0;
-    left: auto;
+    left: 0;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 0;
