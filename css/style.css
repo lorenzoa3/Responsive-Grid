@@ -208,16 +208,9 @@ first div in the grid  and place it in the grid. */
 }
 
 /* Add your media query here */
-@media (max-width: 768px) {
-  /* Define responsive styles for screens with a maximum width of 768px or smaller */
-
-  /* Example: Adjust the layout or font sizes for smaller screens */
-  .container {
-    grid-template-columns: 1fr; /* Change to a single column layout for small screens */
-  }
-
-  /* Step 9: Write the selector/rule property to style the nav element */
- nav {
+@media (min-width: 800px) {
+   /* Step 9: Write the selector/rule property to style the nav element */
+  nav {
   position: absolute; /* Position it absolutely */
   top: 30px; /* Add 30px padding on the top */
   bottom: 30px; /* Add 30px padding on the bottom */
@@ -237,4 +230,8 @@ first div in the grid  and place it in the grid. */
 .method, .contact, .about-image, .clients-image {
   grid-column: 2 / span 2; 
 }
+  }
+
+ 
+
 
