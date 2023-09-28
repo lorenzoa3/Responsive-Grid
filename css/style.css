@@ -131,7 +131,7 @@ a:hover {
   outline: 2px solid; /* Adjust the color as needed */
 }
 
-
+@media (max-width: 799px) {
 /* Step 4: Write selector/rule property to style the container */
 .container {
   display: grid;
@@ -206,7 +206,7 @@ first div in the grid  and place it in the grid. */
   max-height: 250px; 
   overflow: auto; 
 }
-
+}
 /* Add your media query here */
 @media (min-width: 800px) {
    /* Step 9: Write the selector/rule property to style the nav element */
