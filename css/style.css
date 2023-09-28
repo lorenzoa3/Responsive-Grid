@@ -142,7 +142,7 @@ first div in the grid  and place it in the grid. */
 .container > :first-child {
   grid-column: 1 / -1; /* Take up all columns */
   min-height: 500px; /* Minimum height of 500px */
-  background-image: url("images/header.jpg"); /* Replace with your image URL */
+  background-image: url('images/header.jpg'); /* Replace with your image URL */
   background-attachment: fixed; /* Parallax effect */
   /* Additional styling for the first child as needed */
 }
