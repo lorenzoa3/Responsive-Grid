@@ -112,22 +112,20 @@ a:hover, a:focus {
 }
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
-.skip a{
+.skip {
   top: -40px;
-  left: 0;
-  opacity: 0;
-  transition: top 0.2s ease, opacity 0.2s ease;
+  position: absolute;
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
 .skip a: focus {
   top: 20px; /* Move 20px below the top of its parent when in focus */
-  opacity: 1; /* Make the link visible when in focus */
+  position: absolute;
 }
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
 *:focus {
-  outline: 2px solid;
+  outline: 2px solid white;
 }
 
 
@@ -135,7 +133,8 @@ a:hover, a:focus {
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  gap: 15px;
+  row-gap: 15px;
+  column-gap: 15px;
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
@@ -143,7 +142,8 @@ first div in the grid  and place it in the grid. */
 .container > :first-child {
   grid-column: 1 / -1; /* Take up all columns */
   min-height: 500px; /* Minimum height of 500px */
-  background-image: url(https://github.com/lorenzoa3/Responsive-Grid/blob/main/images/header.jpg?raw=true); /* Replace with your image URL */
+  background-image: url("../images/header.jpg"); /* Replace with your image URL */
+  background-repeat: no-repeat;
   background-size: cover; /* Adjust as needed */
   background-attachment: fixed; /* Parallax effect */
 }
@@ -154,23 +154,24 @@ first div in the grid  and place it in the grid. */
 
       /*This will be a lot of rules.... but be strategic and combine seletors*/
 .about, .method, .clients, .contact {
-  grid-column: 2 / span 1; /* Begin in the 2nd column and span 1 column */
+  grid-column: 2/3;
+  max-height: 600px;
 }
 
-.about {
-  grid-row: 2; /* Begin on the 2nd row */
+.about, .about-image {
+  grid-row-start: 2; /* Begin on the 2nd row */
 }
 
-.method {
-  grid-row: 3; /* Begin on the 3rd row */
+.method, .method-image {
+  grid-row-start: 3; /* Begin on the 3rd row */
 }
 
-.clients {
-  grid-row: 4; /* Begin on the 4th row */
+.clients, .clients-image {
+  grid-row-start: 4; /* Begin on the 4th row */
 }
 
-.contact {
-  grid-row: 5; /* Begin on the 5th row */
+.contact, .contact-image {
+  grid-row-start: 5; /* Begin on the 5th row */
 }
 
 /* Styles for .about-image, .method-image, .clients-image, and .contact-image */
@@ -180,39 +181,22 @@ first div in the grid  and place it in the grid. */
   overflow: hidden; /* Hide content that goes outside the grid cell */
 }
 
-.about-image {
-  grid-row: 2; /* Begin on the 2nd row */
-}
-
-.method-image {
-  grid-row: 3; /* Begin on the 3rd row */
-}
-
-.clients-image {
-  grid-row: 4; /* Begin on the 4th row */
-}
-
-.contact-image {
-  grid-row: 5; /* Begin on the 5th row */
-}
  /* Step 8: Write the selector/rule property to style the .text-block class. */
-text-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-height: 250px;
+.text-block {
+  margin: auto;
   overflow: auto;
+  max-height: 250px;  
 }
+
+.text-block:focus{
+  overflow: visible;
+ }
 
 /* Add your media query here */
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
   /* Step 9: Move the navigation and add padding */
   nav {
-    top: 30px;
-    bottom: 30px;
     text-align: right;
-    right: 0;
-    left: 0;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 0;
@@ -227,11 +211,11 @@ text-block {
 
   /* Steps 11 and 12: Update grid-column for specified elements */
   .about, .clients, .method-image, .contact-image {
-    grid-column: 3 / span 2;
+    grid-column: 3/5;
   }
 
   .method, .contact, .about-image, .clients-image {
-    grid-column: 2 / span 2;
+    grid-column: 2/4;
   }
 }
 
