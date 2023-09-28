@@ -234,13 +234,11 @@ first div in the grid  and place it in the grid. */
 }
    /* Step 9: Write the selector/rule property to style the nav element */
   nav {
-  position: absolute; /* Position it absolutely */
-  top: 30px; /* Add 30px padding on the top */
-  bottom: 30px; /* Add 30px padding on the bottom */
-  right: 0; /* Align it to the right side of the window */
-  left: auto; /* Reset left property to default (0) */
-  padding-left: 0; /* Remove left padding */
-  padding-right: 0; /* Remove right padding */
+  position: absolute;
+  top: 30px;
+  bottom: 30px; 
+  right: 0; 
+  left: 0; 
 }
  
   /* Step 10: Write the selector/rule property to update the .container class */
